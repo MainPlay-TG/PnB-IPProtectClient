@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
-          tag_name: "${{ github.ref }}"
+          tag_name: "${{ steps.read_yaml.outputs['full_name'] }}"
           release_name: "${{ steps.read_yaml.outputs['full_name'] }}"
           draft: false
           prerelease: false
