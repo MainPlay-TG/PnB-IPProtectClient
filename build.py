@@ -23,6 +23,7 @@ def pack_release(dir:str,name:str):
   return make_archive("release/"+name,"zip","release",name)
 @ms.utils.main_func(__name__)
 def main():
+  log("Сборка %s %s в исходный код и исполняемый файл %s",NAME,VERSION,sys.platform)
   ms.path.cwd(ms.MAIN_DIR)
   log("Установка зависимостей")
   pip_run(["install","-U","-r","src/requirements.txt"])
